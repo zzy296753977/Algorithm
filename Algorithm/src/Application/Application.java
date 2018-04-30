@@ -1,24 +1,14 @@
 package Application;
 
-import BinaryTree.BinaryTree;
-
-
+import Array.RemoveElement;
 
 public class Application {
 	public static void main(String [] args)
 	{	
-		//√∞≈›≈≈–Ú≤‚ ‘	sort.BubbleSort(a);
-		//øÏÀŸ≈≈–Ú≤‚ ‘	sort.QuickSort(a, 0, a.length-1);
-		BinaryTree test = new BinaryTree(10);
-		test.insert(4);
-		test.insert(6);
-		test.insert(9);
-		test.insert(1);
-		test.delete(6);
-		test.preOrderTraverse();
-		test.inOrderTraverse();
-		test.postOrderTraverse();
-		System.out.println(test.getMinValue());
+		
+		int [] arr = {0,0,1,1,1,2,2,3,4};
+		RemoveElement test = new RemoveElement();
+		for(int i=0;i<test.removeElement(arr, 1)-3;i++)System.out.println(arr[i]);
 	}
 
 }
