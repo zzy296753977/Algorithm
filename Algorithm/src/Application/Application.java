@@ -1,12 +1,12 @@
 package Application;
 
-import Array.TwoSumII;
+import BitCalculate.AddBinary;
 
 public class Application {
 	public static void main(String [] args)
 	{	
-		TwoSumII test = new TwoSumII();
-		test.twoSum(new int []{5,25,75},100);
+		AddBinary test = new AddBinary();
+		System.out.println(test.addBinary("0001","01"));
 	}
 
 }

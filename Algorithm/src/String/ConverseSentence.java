@@ -19,4 +19,14 @@ public class ConverseSentence {
 		}
 		System.out.println(sentence[0]);
 	}
+	//Ê±¼ä¸ü¶Ì
+	public String reverseString(String s) {
+        char[] arr = new char[s.length()];
+        for(int i = 0; i < arr.length; i++){
+            arr[i] = s.charAt(arr.length - 1 - i);
+        }
+        return new String(arr);
+        
+    }
+   
 }

@@ -53,6 +53,26 @@ public class PrimeNumber {
 			if(num>1)System.out.print(num+" ");
 		}
 	}
-
-
+	//important！！！
+	public int countPrimes(int n) {
+        int count = 0;
+        boolean [] flag = new boolean[n];
+        for (int i=0;i<n;i++)
+            flag[i]=true;
+        //画圈法，从2开始，将小于n的i倍数全部划掉
+        for(int i=2;i*i<n;i++)
+        {
+            if(flag[i])
+            {
+                for(int j=i;i*j<n;j++)
+                {
+                    flag[i*j]=false;
+                }
+            }        
+        }
+        for(int i=2;i<n;i++)
+            if(flag[i])
+                count++;
+        return count;
+    }
 }
