@@ -9,7 +9,7 @@ public class BinaryTreePaths {
 		TreeNode left;
 		TreeNode right;
 
-		TreeNode(int x) {
+		 TreeNode(int x) {
 			val = x;
 		}
 	}
@@ -40,4 +40,36 @@ public class BinaryTreePaths {
 	        }
 	        return;
 	    }
+	    
+	    //判断每个路径是否有给定的和
+	    public boolean hasPathSum(TreeNode root, int sum) {
+	        List<Integer>result = new ArrayList<>();
+		        if (root!=null)
+		        {
+		            path(root,0,result);
+		        }
+	        for (int i:result)
+	        {
+	            if (sum==i)
+	                return true;
+	        }
+	        return false;
+	    }
+	    private void path(TreeNode root,int sum,List<Integer>result)
+		    {
+		        if(root.left==null&&root.right==null)
+		        {
+		            result.add(sum+root.val);
+		            return;
+		        }
+		        if(root.left!=null)
+		        {
+		            path(root.left,sum+root.val,result);
+		        }
+		        if(root.right!=null)
+		        {
+		            path(root.right,sum+root.val,result);
+		        }
+		        return;
+		    }
 }

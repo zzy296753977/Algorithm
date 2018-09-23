@@ -19,7 +19,7 @@ package Recursion;
  * 为什么第二种情况不能先走一步再走一步呢，因为先走一步的情况在f(n-1)中已经考虑过了
  */
 public class SkipStep {
-
+	//递归
 	public int function(int n)
 	{
 		if(n<=0)
@@ -35,5 +35,23 @@ public class SkipStep {
 			return 2;
 		}
 		return function(n-1)+function(n-2);
+	}
+	//非递归
+	public int climbStairs(int n) 
+	{
+        if(n<=0)return 0;
+		if(n==1)return 1;
+        if(n==2)return 2;
+        else
+        {
+           int [] steps = new int [n+1];
+        steps[1] = 1;
+        steps[2] = 2;
+        for(int i=3;i<=n;i++)
+        {
+            steps[i]=steps[i-1]+steps[i-2];
+        }
+        return steps[n]; 
+        }
 	}
 }
